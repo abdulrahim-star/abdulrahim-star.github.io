@@ -6,11 +6,21 @@
 <title>عبدالرحيم محمد أمين</title>
 <meta name="description" content="عبدالرحيم محمد أمين — مدير الموارد البشرية لشركة شؤون الغذاء لتطوير وإدارة المطاعم وشركة سنام الرائدة. خبرة تزيد على 6 سنوات في إدارة الموارد البشرية والتشغيل الميداني للمطاعم.">
 <meta property="og:type" content="profile">
+<meta property="og:site_name" content="عبدالرحيم محمد أمين">
+<meta property="og:url" content="https://abdulrahim-star.github.io/">
 <meta property="og:title" content="عبدالرحيم محمد أمين — مدير الموارد البشرية">
-<meta property="og:description" content="شركة شؤون الغذاء لتطوير وإدارة المطاعم وشركة سنام الرائدة — 6 علامات تجارية وأكثر من 40 فرعاً حول المملكة.">
-<meta property="og:image" content="portrait.webp">
+<meta property="og:description" content="شركة شؤون الغذاء لتطوير وإدارة المطاعم وشركة سنام الرائدة — ومطوّر ومنتج منصة شؤون HRPRO.">
+<meta property="og:image" content="https://abdulrahim-star.github.io/share.jpg">
+<meta property="og:image:secure_url" content="https://abdulrahim-star.github.io/share.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="عبدالرحيم محمد أمين — مدير الموارد البشرية">
 <meta property="og:locale" content="ar_SA">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="عبدالرحيم محمد أمين — مدير الموارد البشرية">
+<meta name="twitter:description" content="شركة شؤون الغذاء لتطوير وإدارة المطاعم وشركة سنام الرائدة — ومطوّر ومنتج منصة شؤون HRPRO.">
+<meta name="twitter:image" content="https://abdulrahim-star.github.io/share.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -174,13 +184,32 @@ nav a.on{color:var(--accent-3);}
 
 /* ===== شريط الأرقام ===== */
 .stats{position:relative;z-index:2;margin-top:34px;}
-.stats .in{display:grid;grid-template-columns:repeat(4,1fr);padding:6px;border-radius:22px;}
-.stat{padding:26px 12px;text-align:center;position:relative;}
-.stat+.stat::before{content:"";position:absolute;inset-inline-start:0;top:22%;bottom:22%;width:1px;background:var(--line-soft);}
-.stat .v{font-family:var(--display);font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:700;line-height:1;letter-spacing:-.035em;
-  background:linear-gradient(160deg,#fff,var(--accent-3) 70%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;}
-.stat .v .plus{color:var(--gold-2);-webkit-text-fill-color:var(--gold-2);}
-.stat .k{font-size:12.5px;color:var(--muted);margin-top:9px;}
+.stats .in{display:grid;grid-template-columns:repeat(4,1fr);padding:10px;border-radius:24px;overflow:hidden;}
+.stat{padding:34px 12px 30px;text-align:center;position:relative;}
+.stat+.stat::before{content:"";position:absolute;inset-inline-start:0;top:20%;bottom:20%;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(201,162,39,.45),transparent);}
+.stat .v{position:relative;display:inline-block;font-family:var(--display);font-size:clamp(2.2rem,5.4vw,3.5rem);font-weight:700;
+  line-height:1;letter-spacing:-.04em;
+  background:linear-gradient(165deg,#fff 8%,var(--accent-3) 58%,var(--accent) 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 22px rgba(47,208,138,.3));}
+.stat .v::before{content:"";position:absolute;z-index:-1;inset-inline:-30%;top:-28%;bottom:-28%;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(0,168,98,.3),transparent 70%);filter:blur(12px);}
+.stat .v .plus{-webkit-text-fill-color:var(--gold-2);color:var(--gold-2);filter:none;}
+.stat .bar{width:0;height:1px;margin:14px auto 0;background:linear-gradient(90deg,transparent,var(--gold-2),transparent);
+  transition:width 1.1s cubic-bezier(.2,.7,.3,1);}
+.stat.done .bar{width:52px;}
+.stat .k{font-size:12.5px;color:var(--muted);margin-top:11px;letter-spacing:.015em;}
+.stats .in::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(105deg,transparent 40%,rgba(232,207,139,.12) 50%,transparent 60%);
+  transform:translateX(-130%);}
+.stats.lit .in::after{animation:sweep 1.9s cubic-bezier(.3,.7,.3,1) .35s both;}
+@keyframes sweep{to{transform:translateX(130%)}}
+
+/* ضوء يتبع المؤشر داخل البطاقات */
+.spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .45s;
+  background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(47,208,138,.13),rgba(47,208,138,.06) 30%,rgba(47,208,138,.02) 52%,transparent 74%);}
+.spot:hover::after{opacity:1;}
 
 /* ===== جدار الشعارات المتحرك ===== */
 .ticker{overflow:hidden;padding:24px 0 8px;margin-top:44px;border-top:1px solid var(--line-soft);
@@ -229,6 +258,9 @@ section{scroll-margin-top:84px;}
 .head{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:44px;}
 .tag{font-size:11.5px;letter-spacing:.16em;color:var(--gold-2);display:flex;align-items:center;gap:11px;margin-bottom:13px;}
 .tag::before{content:"";width:28px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+main{counter-reset:sec;}
+.sec{counter-increment:sec;}
+.sec .tag::after{content:"/ 0" counter(sec);opacity:.5;font-size:10.5px;letter-spacing:.1em;}
 .head h2{font-size:clamp(1.6rem,3.8vw,2.55rem);font-weight:600;letter-spacing:-.025em;}
 .head p{color:var(--muted);max-width:50ch;font-size:14.5px;}
 
@@ -294,6 +326,11 @@ section{scroll-margin-top:84px;}
 .plat-card .logo{font-family:var(--display);font-size:1.95rem;font-weight:700;letter-spacing:-.025em;}
 .plat-card .logo span{background:linear-gradient(140deg,var(--accent-3),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;}
 .plat-card .slug{color:var(--gold-2);font-size:13px;margin-top:5px;letter-spacing:.02em;}
+.builder{display:flex;align-items:center;gap:13px;margin-top:18px;padding:13px 16px;border-radius:14px;
+  background:linear-gradient(140deg,rgba(201,162,39,.13),rgba(201,162,39,.04));border:1px solid rgba(201,162,39,.38);}
+.builder .b-ic{color:var(--gold-2);font-size:11px;}
+.builder small{display:block;font-size:11px;letter-spacing:.14em;color:var(--gold-2);margin-bottom:3px;}
+.builder b{font-family:var(--display);font-size:15.5px;font-weight:600;color:var(--fg);}
 .plat-card .link{display:inline-flex;align-items:center;gap:9px;margin-top:20px;font-size:14px;color:var(--accent-3);
   border-bottom:1px solid rgba(47,208,138,.35);padding:8px 0;min-height:44px;transition:gap .25s;}
 .plat-card .link:hover{gap:14px;}
@@ -315,6 +352,108 @@ section{scroll-margin-top:84px;}
 .cert h4{font-size:16px;color:var(--gold-2);margin-bottom:5px;}
 .cert .from{font-size:12.5px;color:var(--dim);margin-bottom:15px;}
 .cert p{color:#C6D2C9;font-size:14.5px;}
+
+/* ===== المنصات الحكومية ===== */
+.gov-rows{display:flex;flex-direction:column;gap:14px;margin-top:6px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.gov-row{overflow:hidden;direction:ltr;}
+.gov-track{display:flex;gap:14px;width:max-content;direction:ltr;}
+.gv .nm{direction:rtl;}
+.gov-track.a{animation:govL 46s linear infinite;}
+.gov-track.b{animation:govR 52s linear infinite;}
+@keyframes govL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes govR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.gov-row:hover .gov-track{animation-play-state:paused;}
+.gv{flex:none;width:206px;display:flex;flex-direction:column;align-items:center;gap:9px;
+  padding:16px 16px 13px;border-radius:17px;cursor:pointer;background:var(--surface);
+  border:1px solid var(--line);transition:transform .35s cubic-bezier(.22,1,.36,1),background .35s,border-color .35s,box-shadow .35s;}
+.gv .ph{height:58px;display:grid;place-items:center;width:100%;}
+.gv img{max-width:152px;max-height:56px;width:auto;height:auto;object-fit:contain;
+  filter:grayscale(1) brightness(0) invert(.62);transition:filter .5s ease,transform .45s cubic-bezier(.22,1,.36,1);}
+.gv .nm{font-size:11.5px;color:var(--dim);letter-spacing:.02em;text-align:center;transition:color .35s;}
+.gv:hover,.gv.lit{background:#fff;border-color:rgba(47,208,138,.55);transform:translateY(-7px);
+  box-shadow:0 26px 52px -26px rgba(0,168,98,.85);}
+.gv:hover img,.gv.lit img{filter:grayscale(0) brightness(1) invert(0);transform:scale(1.05);}
+.gv:hover .nm,.gv.lit .nm{color:#2B3A30;font-weight:600;}
+.gov-foot{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:center;margin-top:26px;}
+.gov-foot .pill{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;
+  border:1px solid var(--line);background:var(--surface);font-size:12.5px;color:var(--muted);}
+.gov-foot .pill i{width:6px;height:6px;border-radius:50%;background:var(--accent-2);flex:none;
+  box-shadow:0 0 10px var(--accent-2);animation:pulse 2.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.72)}}
+
+/* ===== بطاقة المنصة ===== */
+.idcard{position:relative;margin-top:26px;padding:clamp(26px,3.6vw,44px);border-radius:26px;overflow:hidden;
+  background:linear-gradient(150deg,rgba(0,168,98,.11),rgba(4,7,6,.5) 46%,rgba(201,162,39,.08));
+  border:1px solid rgba(201,162,39,.3);transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s;}
+.idcard::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(232,207,139,.14),rgba(47,208,138,.06) 38%,transparent 70%);}
+.idcard:hover::after{opacity:1;}
+.idcard:hover{box-shadow:0 44px 90px -44px rgba(0,168,98,.6);}
+.id-top{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;justify-content:space-between;
+  padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08);}
+.id-mark{display:flex;align-items:center;gap:14px;}
+.id-sig{width:54px;height:54px;flex:none;border-radius:16px;display:grid;place-items:center;
+  font-family:var(--display);font-weight:700;font-size:19px;color:#03200F;
+  background:linear-gradient(145deg,var(--accent-3),var(--accent));box-shadow:0 14px 30px -14px rgba(0,168,98,1);}
+.id-mark h3{font-family:var(--display);font-size:clamp(1.25rem,3vw,1.75rem);font-weight:700;letter-spacing:-.02em;line-height:1.25;}
+.id-mark h3 em{font-style:normal;background:linear-gradient(140deg,var(--accent-3),var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent;}
+.id-mark .sub{font-size:12.5px;color:var(--gold-2);letter-spacing:.03em;margin-top:3px;}
+.id-badge{display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border-radius:14px;
+  background:linear-gradient(140deg,rgba(201,162,39,.16),rgba(201,162,39,.04));border:1px solid rgba(201,162,39,.4);}
+.id-badge small{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--gold-2);margin-bottom:2px;}
+.id-badge b{font-family:var(--display);font-size:14.5px;font-weight:600;color:var(--fg);}
+.id-body{margin-top:22px;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,3vw,40px);}
+.id-body p{color:#C6D2C9;font-size:15px;line-height:2;margin-bottom:13px;}
+.id-body p:last-child{margin-bottom:0;}
+.id-feats{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;}
+.id-feats span{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border-radius:11px;font-size:12.8px;
+  color:var(--muted);background:rgba(255,255,255,.035);border:1px solid var(--line);
+  transition:transform .3s,color .3s,border-color .3s,background .3s;}
+.id-feats span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent-2);flex:none;}
+.id-feats span:hover{transform:translateY(-3px);color:var(--fg);border-color:rgba(47,208,138,.45);background:rgba(0,168,98,.09);}
+.id-tag{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;}
+.id-tag .line{font-family:var(--display);font-size:clamp(14px,2.2vw,17px);font-weight:600;color:var(--gold-2);letter-spacing:.01em;}
+.id-tag .go{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--accent-3);min-height:44px;}
+.id-tag .go:hover{gap:14px;}
+
+/* ===== الدورات ===== */
+.courses{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(20px,3vw,34px);align-items:stretch;}
+.course{padding:30px;display:flex;flex-direction:column;}
+.course::before{background:linear-gradient(145deg,rgba(47,208,138,.45),rgba(0,168,98,.12) 50%,rgba(255,255,255,.04));}
+.course .cap{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;padding:8px 14px;border-radius:999px;
+  font-size:11.5px;letter-spacing:.06em;color:var(--accent-3);background:rgba(0,168,98,.1);
+  border:1px solid rgba(47,208,138,.3);margin-bottom:18px;}
+.course h4{font-size:clamp(17px,2.6vw,21px);line-height:1.45;margin-bottom:8px;}
+.course .org{font-size:13px;color:var(--gold-2);margin-bottom:18px;}
+.course .meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.course .meta b{display:inline-flex;align-items:baseline;gap:6px;padding:10px 14px;border-radius:12px;
+  background:rgba(255,255,255,.035);border:1px solid var(--line);font-size:12.5px;font-weight:500;color:var(--muted);}
+.course .meta b i{font-style:normal;font-family:var(--display);font-size:17px;font-weight:700;color:var(--fg);}
+.course p{color:#C6D2C9;font-size:14.5px;margin-bottom:22px;}
+.course .dl{margin-top:auto;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  padding:13px 20px;min-height:44px;border-radius:14px;font-size:13.5px;font-weight:600;color:#03200F;
+  background:linear-gradient(140deg,var(--accent-3),var(--accent));
+  box-shadow:0 18px 38px -20px rgba(0,168,98,1);transition:transform .28s,box-shadow .32s;}
+.course .dl:hover{transform:translateY(-3px);box-shadow:0 26px 50px -22px rgba(0,168,98,1);}
+.course .dl svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.cert-view{position:relative;display:block;margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  background:#0A100D;transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s,border-color .4s;}
+.cert-view img{width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block;
+  filter:saturate(.85) brightness(.82);transition:filter .5s,transform .7s cubic-bezier(.22,1,.36,1);}
+.cert-view:hover{transform:translateY(-6px);border-color:rgba(47,208,138,.45);box-shadow:0 36px 70px -34px rgba(0,168,98,.8);}
+.cert-view:hover img{filter:saturate(1) brightness(1);transform:scale(1.03);}
+.cert-view .ov{position:absolute;inset:0;display:flex;align-items:flex-end;padding:18px;
+  background:linear-gradient(0deg,rgba(4,7,6,.92),rgba(4,7,6,.15) 55%,transparent);}
+.cert-view .ov span{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:var(--fg);}
+.cert-view .ov span::before{content:"";width:28px;height:28px;border-radius:9px;flex:none;
+  background:linear-gradient(140deg,var(--gold-2),var(--gold));
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M12 3a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM8 16.3 6.6 22 12 19.4 17.4 22 16 16.3a8 8 0 0 1-8 0z'/></svg>") center/18px no-repeat;
+  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M12 3a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM8 16.3 6.6 22 12 19.4 17.4 22 16 16.3a8 8 0 0 1-8 0z'/></svg>") center/18px no-repeat;}
 
 /* ===== تواصل ===== */
 .contact{text-align:center;padding:clamp(40px,6vw,62px) clamp(20px,4vw,48px);}
@@ -372,8 +511,9 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
   .pf{order:-1;min-height:330px;margin-bottom:6px;}
   .pf img{width:min(78%,330px);}
   .pb1{inset-inline-start:2%;} .pb2{inset-inline-end:2%;} .pb3{display:none;}
-  .about,.plat{grid-template-columns:1fr;}
+  .about,.plat,.id-body,.courses{grid-template-columns:1fr;}
   .brands,.exp{grid-template-columns:repeat(2,1fr);}
+  .cert-view img{aspect-ratio:1169/827;height:auto;}
 }
 @media (max-width:760px){
   nav{display:none;} .head-cta{display:none;}
@@ -398,6 +538,13 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
   .pb1{top:8%;inset-inline-start:0;} .pb2{bottom:14%;inset-inline-end:0;}
   .lg{width:132px;height:72px;padding:12px 16px;}
   .ticker{margin-top:34px;}
+  .gv{width:150px;padding:13px 12px 11px;}
+  .gv img{max-width:104px;max-height:42px;}
+  .gv .ph{height:44px;}
+  .idcard{padding:24px 20px;border-radius:20px;}
+  .id-top{gap:14px;}
+  .id-sig{width:46px;height:46px;font-size:16px;}
+  .course{padding:24px 20px;}
   .co-logo{height:62px;padding:9px 16px;}
   .cta .btn{flex:1;min-width:150px;}
   .fab{display:none;}
@@ -427,8 +574,10 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
       <a href="#companies">الشركات</a>
       <a href="#brands">العلامات</a>
       <a href="#expertise">الخبرة</a>
+      <a href="#gov">منصات حكومية</a>
       <a href="#platform">المنصة</a>
       <a href="#certs">الشهادات</a>
+      <a href="#courses">دوراتي</a>
       <a href="#contact">تواصل</a>
     </nav>
     <button class="sbtn" id="sound-btn" data-on="false" aria-label="تشغيل أو كتم المؤثرات الصوتية" aria-pressed="false">
@@ -452,7 +601,7 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
         <h1 class="en d2"><span class="sheen">عبدالرحيم محمد أمين</span></h1>
         <div class="rule en d2"></div>
         <p class="role en d3">مدير الموارد البشرية لـ <b>شركة شؤون الغذاء لتطوير وإدارة المطاعم</b> و<b>شركة سنام الرائدة</b></p>
-        <p class="lede en d4">خبرة تزيد على <span class="num">6</span> سنوات في الإدارة والتشغيل الميداني للمطاعم وإدارة الموارد البشرية والفروع، من استقطاب الكوادر وإدارة الرواتب إلى التراخيص والسجلات وتجهيز الفروع للافتتاح.</p>
+        <p class="lede en d4">خبرة تزيد على <span class="num">6</span> سنوات في الإدارة والتشغيل الميداني للمطاعم وإدارة الموارد البشرية والفروع — ومطوّر ومنتج <b style="color:var(--gold-2);font-weight:600">منصة شؤون HRPRO</b> لإدارة الموارد البشرية.</p>
         <div class="cta en d5">
           <a class="btn btn-wa mag" href="https://wa.me/966593394514" target="_blank" rel="noopener">
             <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M.06 24l1.69-6.16A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.8 11.8 0 0 1 8.4 3.49 11.8 11.8 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zm6.6-3.8c1.68.99 3.28 1.58 5.4 1.58 5.45 0 9.9-4.43 9.9-9.88A9.88 9.88 0 0 0 12.07 2a9.89 9.89 0 0 0-9.89 9.9c0 2.22.65 3.88 1.74 5.62l-1 3.65 3.74-.98zm11.39-5.56c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42z"/></svg>
@@ -466,7 +615,7 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
         <div class="halo" aria-hidden="true"></div>
         <div class="orbit" aria-hidden="true"></div>
         <div class="orbit2" aria-hidden="true"></div>
-        <img src="portrait.webp" alt="عبدالرحيم محمد أمين" width="820" height="1021" fetchpriority="high">
+        <img src="portrait.webp" alt="عبدالرحيم محمد أمين" width="984" height="1256" fetchpriority="high">
         <div class="pbadge pb1"><span class="v"><span class="num cnt" data-to="40">40</span><span style="color:var(--gold-2)">+</span></span><span class="k">فرعاً<br>حول المملكة</span></div>
         <div class="pbadge pb2"><span class="v"><span class="num cnt" data-to="6">6</span></span><span class="k">علامات<br>تجارية</span></div>
         <div class="pbadge pb3"><span class="v"><span class="num cnt" data-to="2">2</span></span><span class="k">شركتان<br>تحت الإدارة</span></div>
@@ -474,12 +623,12 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
     </div>
 
     <!-- الأرقام -->
-    <div class="stats en d6">
+    <div class="stats en d6" id="stats">
       <div class="in glass">
-        <div class="stat"><div class="v"><span class="num cnt" data-to="2">2</span></div><div class="k">شركتان تحت الإدارة</div></div>
-        <div class="stat"><div class="v"><span class="num cnt" data-to="6">6</span></div><div class="k">علامات تجارية</div></div>
-        <div class="stat"><div class="v"><span class="num cnt" data-to="40">40</span><span class="plus">+</span></div><div class="k">فرعاً حول المملكة</div></div>
-        <div class="stat"><div class="v"><span class="num cnt" data-to="6">6</span></div><div class="k">سنوات خبرة</div></div>
+        <div class="stat"><div class="v"><span class="num cnt" data-to="2">2</span></div><div class="bar"></div><div class="k">شركتان تحت الإدارة</div></div>
+        <div class="stat"><div class="v"><span class="num cnt" data-to="6">6</span></div><div class="bar"></div><div class="k">علامات تجارية</div></div>
+        <div class="stat"><div class="v"><span class="num cnt" data-to="40">40</span><span class="plus">+</span></div><div class="bar"></div><div class="k">فرعاً حول المملكة</div></div>
+        <div class="stat"><div class="v"><span class="num cnt" data-to="6">6</span></div><div class="bar"></div><div class="k">سنوات خبرة</div></div>
       </div>
     </div>
 
@@ -499,7 +648,7 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
       <div class="body rv pre">
         <p>أنا <strong>عبدالرحيم محمد أمين</strong>، مدير الموارد البشرية لشركة <strong>شؤون الغذاء لتطوير وإدارة المطاعم</strong> وشركة <strong>سنام الرائدة</strong> المشغّلة لسلسلة مطاعم <strong>حاشي باشا</strong>.</p>
         <p>أقود ملف الموارد البشرية للشركتين بالكامل: الاستقطاب والتوظيف، خدمات العمالة والموظفين، إدارة العقود، مسيرات الرواتب والأجور، وعلاقات الموظفين وتقييم الأداء، إلى جانب السكرتارية التنفيذية والمراسلات الرسمية والأرشفة.</p>
-        <p>إلى جانب العمل المكتبي، أتولى الجانب الميداني: استخراج التراخيص والسجلات، الإشراف على الأنشطة التجارية، وتجهيز الفروع للافتتاح والتأكد من مطابقتها للمعايير. هذا المزيج بين <strong>الإدارة والتشغيل الميداني</strong> هو ما بُنيت عليه منصة <strong>شؤون HR</strong>.</p>
+        <p>إلى جانب العمل المكتبي، أتولى الجانب الميداني: استخراج التراخيص والسجلات، الإشراف على الأنشطة التجارية، وتجهيز الفروع للافتتاح والتأكد من مطابقتها للمعايير. ومن هذا المزيج بين <strong>الإدارة والتشغيل الميداني</strong> قمت بـ<strong>تطوير وإنتاج منصة شؤون HRPRO</strong> بنفسي — نظام متكامل لإدارة الموارد البشرية للشركات متعددة الفروع.</p>
       </div>
       <aside class="about-side rv pre">
       <figure class="photo-card">
@@ -513,7 +662,7 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
           <li><span class="chk">✓</span><span><b>الرواتب والأجور</b> لكافة الفروع دون تأخير</span></li>
           <li><span class="chk">✓</span><span><b>التراخيص والسجلات</b> من الألف إلى الياء</span></li>
           <li><span class="chk">✓</span><span><b>تجهيز الفروع</b> للافتتاح ومطابقة المعايير</span></li>
-          <li><span class="chk">✓</span><span><b>منصة شؤون HR</b> — الإنتاج والتطوير</span></li>
+          <li><span class="chk">✓</span><span><b>منصة شؤون HRPRO</b> — من تطويري وإنتاجي</span></li>
         </ul>
       </div>
       </aside>
@@ -529,7 +678,7 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
       <p>بيانات منفصلة لكل شركة، وهيكل تنظيمي وصلاحيات موحّدة تربط المناطق والفروع.</p>
     </div>
     <div class="cos">
-      <article class="co glass shine tilt rv pre">
+      <article class="co glass spot tilt rv pre">
         <div class="co-logo"><img src="shoun.webp" alt="شعار شركة شؤون الغذاء"></div>
         <div class="kicker">الشركة الأولى</div>
         <h3>شركة شؤون الغذاء لتطوير وإدارة المطاعم</h3>
@@ -539,7 +688,7 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
           <div><span class="num cnt" data-to="10">10</span><small>فروع</small></div>
         </div>
       </article>
-      <article class="co glass shine tilt rv pre">
+      <article class="co glass spot tilt rv pre">
         <div class="co-logo"><img src="sanam.webp" alt="شعار شركة سنام الرائدة"></div>
         <div class="kicker">الشركة الثانية</div>
         <h3>شركة سنام الرائدة</h3>
@@ -575,19 +724,37 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
   </div>
 </section>
 
+<!-- المنصات الحكومية -->
+<section class="sec" id="gov">
+  <div class="wrap">
+    <div class="head rv pre">
+      <div><div class="tag">المنصات الحكومية</div><h2>عملٌ يومي داخل منظومات التشغيل الرسمية</h2></div>
+      <p>تُدار إجراءات الشركتين وجميع الفروع عبر المنصات الحكومية المعتمدة — من العقود والتأمينات إلى الرواتب والتراخيص.</p>
+    </div>
+    <div class="gov-rows rv pre">
+      <div class="gov-row"><div class="gov-track a" id="gov-a"></div></div>
+      <div class="gov-row"><div class="gov-track b" id="gov-b"></div></div>
+    </div>
+    <div class="gov-foot rv pre">
+      <span class="pill"><i></i> اضغط على أي شعار ليظهر بألوانه الأصلية</span>
+      <span class="pill"><span class="num" style="font-family:var(--display);font-weight:700;color:var(--fg)">13</span> منصة ضمن العمل اليومي</span>
+    </div>
+  </div>
+</section>
+
 <!-- المنصة -->
 <section class="sec" id="platform">
   <div class="wrap">
     <div class="head rv pre">
-      <div><div class="tag">المنصة</div><h2>شؤون HR — الإدارة الذكية للموارد البشرية</h2></div>
-      <p>نظام موحّد لإدارة الموارد البشرية للشركات والمطاعم متعددة الفروع، نشأ من خبرة ميدانية داخل المطاعم نفسها.</p>
+      <div><div class="tag">المنصة</div><h2>شؤون HRPRO — من تطويري وإنتاجي</h2></div>
+      <p>نظام موحّد لإدارة الموارد البشرية للشركات والمطاعم متعددة الفروع، طوّرته وأنتجته بنفسي من واقع خبرة ميدانية داخل المطاعم.</p>
     </div>
     <div class="plat">
       <div class="plat-card glass shine rv pre">
-        <div class="logo">شؤون <span>HR</span></div>
+        <div class="logo">شؤون <span>HRPRO</span></div>
         <div class="slug">إدارة أذكى • قرارات أسرع • أداء أفضل</div>
         <p style="color:var(--muted);font-size:14px;margin-top:17px">يربط الشركات والمناطق والفروع في منظومة واحدة، مع صلاحيات حسب الدور ونطاق العمل، وإدارة متعددة الشركات مع عزل بيانات كل شركة.</p>
-        <p style="color:var(--dim);font-size:13px;margin-top:13px">الإنتاج والتطوير: عبدالرحيم محمد</p>
+        <div class="builder"><span class="b-ic">◆</span><span><small>الإنتاج والتطوير</small><b>عبدالرحيم محمد أمين</b></span></div>
         <a class="link mag" href="https://www.shoounhr.com" target="_blank" rel="noopener">زيارة المنصة — www.shoounhr.com <span class="arw">←</span></a>
       </div>
       <div>
@@ -598,6 +765,39 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
         </div>
       </div>
     </div>
+
+    <!-- البطاقة التعريفية للمنصة -->
+    <article class="idcard spot tilt rv pre">
+      <div class="id-top">
+        <div class="id-mark">
+          <span class="id-sig" aria-hidden="true">HR</span>
+          <div>
+            <h3>شؤون <em>HRPRO</em> | إدارة أذكى للموارد البشرية</h3>
+            <div class="sub">بطاقة تعريفية بالمنصة</div>
+          </div>
+        </div>
+        <div class="id-badge"><span><small>الإنتاج والتطوير</small><b>عبدالرحيم محمد أمين</b></span></div>
+      </div>
+
+      <div class="id-body">
+        <div>
+          <p><strong>شؤون HRPRO</strong> منصة إلكترونية متكاملة لإدارة الموارد البشرية، صُممت لتسهيل إدارة الشركات والفروع والموظفين من مكان واحد.</p>
+          <p>يوفّر النظام حلولاً لإدارة ملفات الموظفين والعقود والرواتب والحضور والانصراف والإجازات والمستندات، إضافة إلى بوابة إلكترونية للموظفين تتيح لهم متابعة بياناتهم وتقديم طلباتهم بسهولة.</p>
+          <p>تتميّز المنصة بواجهة عربية سهلة الاستخدام، وصلاحيات متعددة تناسب أصحاب الشركات ومدراء الموارد البشرية ومدراء الفروع، مع مراعاة خصوصية بيانات كل شركة.</p>
+        </div>
+        <div class="id-feats">
+          <span>ملفات الموظفين</span><span>العقود</span><span>الرواتب</span>
+          <span>الحضور والانصراف</span><span>الإجازات</span><span>المستندات</span>
+          <span>بوابة الموظف</span><span>صلاحيات متعددة</span><span>واجهة عربية</span>
+          <span>خصوصية بيانات كل شركة</span>
+        </div>
+      </div>
+
+      <div class="id-tag">
+        <div class="line">شؤون HRPRO — إدارة أذكى، قرارات أسرع، أداء أفضل.</div>
+        <a class="go mag" href="https://www.shoounhr.com" target="_blank" rel="noopener">www.shoounhr.com <span class="arw">←</span></a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -608,18 +808,49 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
       <div><div class="tag">شهادات شكر وتقدير</div><h2>تقدير من الشركتين</h2></div>
     </div>
     <div class="certs">
-      <article class="cert glass shine rv pre">
+      <article class="cert glass spot rv pre">
         <div class="seal"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-2.5L17 22l-1.5-7.5"/></svg></div>
         <h4>شهادة شكر وتقدير وخبرة مهنية</h4>
         <div class="from">شركة شؤون الغذاء لتطوير وإدارة المطاعم</div>
         <p>تشهد الشركة بالكفاءة العالية في إدارة الموارد البشرية وإدارة الأنشطة واستخراج كافة التراخيص التجارية بفاعلية، وبإدارة عمليات التأسيس والتطوير باقتدار.</p>
       </article>
-      <article class="cert glass shine rv pre">
+      <article class="cert glass spot rv pre">
         <div class="seal"><svg viewBox="0 0 24 24"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 15.4 6.8 18.1l1-5.8L3.5 8.2l5.9-.9z"/></svg></div>
         <h4>شهادة شكر وتقدير وخبرة مهنية</h4>
         <div class="from">شركة سنام الرائدة</div>
         <p>تقدير للجهود الاستثنائية والتفاني في العمل، وللجدارة في تقديم خدمات السكرتارية وتخليص التراخيص وقيادة شؤون العمال والموارد البشرية وإدارة الرواتب عبر الفروع.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- دوراتي -->
+<section class="sec" id="courses">
+  <div class="wrap">
+    <div class="head rv pre">
+      <div><div class="tag">دوراتي</div><h2>تطوير مستمر في الموارد البشرية</h2></div>
+      <p>دورات متخصصة تواكب التحول الرقمي في إدارة الموارد البشرية.</p>
+    </div>
+    <div class="courses">
+      <article class="course glass spot rv pre">
+        <span class="cap">دورة تدريبية معتمدة</span>
+        <h4>خارطة التحوّل الذكي للموارد البشرية</h4>
+        <div class="org">الوقف العلمي — جامعة الملك عبدالعزيز بجدة</div>
+        <div class="meta">
+          <b><i class="num cnt" data-to="20">20</i> ساعة تدريبية</b>
+          <b><i class="num cnt" data-to="5">5</i> أيام</b>
+          <b>عن بُعد عبر منصة ZOOM</b>
+        </div>
+        <p>دورة تركّز على توظيف الأدوات الرقمية والتحليلات في إدارة الموارد البشرية، وبناء خارطة تحوّل عملية تنقل العمليات اليدوية إلى أنظمة ذكية — وهو التوجّه نفسه الذي تقوم عليه منصة شؤون HRPRO.</p>
+        <a class="dl mag" href="certificate.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          عرض الشهادة (PDF)
+        </a>
+      </article>
+      <a class="cert-view rv pre" href="certificate.pdf" target="_blank" rel="noopener" aria-label="فتح شهادة الدورة بصيغة PDF">
+        <img src="cert.webp" alt="شهادة حضور دورة خارطة التحوّل الذكي للموارد البشرية" loading="lazy" width="980" height="693">
+        <span class="ov"><span>شهادة حضور معتمدة — اضغط لفتح الملف</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -680,7 +911,7 @@ footer::before{content:"";position:absolute;top:0;inset-inline:clamp(18px,4vw,44
     <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M.06 24l1.69-6.16A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.8 11.8 0 0 1 8.4 3.49 11.8 11.8 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zm6.6-3.8c1.68.99 3.28 1.58 5.4 1.58 5.45 0 9.9-4.43 9.9-9.88A9.88 9.88 0 0 0 12.07 2a9.89 9.89 0 0 0-9.89 9.9c0 2.22.65 3.88 1.74 5.62l-1 3.65 3.74-.98zm11.39-5.56c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42z"/></svg>
     واتساب
   </a>
-  <a class="btn btn-gold" href="https://www.shoounhr.com" target="_blank" rel="noopener">منصة شؤون HR</a>
+  <a class="btn btn-gold" href="https://www.shoounhr.com" target="_blank" rel="noopener">منصة شؤون HRPRO</a>
 </div>
 
 <script>
@@ -697,6 +928,21 @@ const WALL=[
  {l:"shoun.webp",n:"شؤون الغذاء"},{l:"sanam.webp",n:"سنام الرائدة"},{l:"hashi.webp",n:"حاشي باشا"},
  {l:"tahameiah.webp",n:"نكهة تهامية"},{l:"dawar.webp",n:"دوار السعادة"},{l:"mashwiyah.webp",n:"مشوية"},
  {l:"hiraa.webp",n:"دار حراء"},{l:"shawaya.webp",n:"حاشي وشواية"},{l:"etlalah.webp",n:"إطلالة البيت"}
+];
+const GOV=[
+ {l:"g-qiwa.webp",n:"قِوى"},
+ {l:"g-mudad.webp",n:"مُدد"},
+ {l:"g-muqeem.webp",n:"مُقيم"},
+ {l:"g-absher.webp",n:"أبشر أعمال"},
+ {l:"g-musaned.webp",n:"مساند"},
+ {l:"g-taameeni.webp",n:"تأميني"},
+ {l:"g-balady.webp",n:"بلدي"},
+ {l:"g-najiz.webp",n:"ناجز"},
+ {l:"g-zatca.webp",n:"الزكاة والضريبة والجمارك"},
+ {l:"g-commerce.webp",n:"وزارة التجارة"},
+ {l:"g-sbc.webp",n:"المركز السعودي للأعمال"},
+ {l:"g-invest.webp",n:"استثمر في السعودية"},
+ {l:"g-tamm.webp",n:"تم — أبوظبي"}
 ];
 const EXP=[
  {i:"users",h:"إدارة الموارد البشرية",p:"إدارة علاقات الموظفين، تقييم الأداء، وتطبيق سياسات ولوائح العمل لضمان الإنتاجية المستمرة عبر جميع الفروع."},
@@ -786,7 +1032,7 @@ const Sound=(function(){
 /* ============ البناء ============ */
 const bg_=document.getElementById('brands-grid');
 BRANDS.forEach((b,i)=>{
-  const el=document.createElement('div'); el.className='brand glass rv pre';
+  const el=document.createElement('div'); el.className='brand glass spot rv pre';
   const cnt = b.b.length>2 ? '<span class="num">'+b.b.length+'</span> فروع' : (b.b.length===2?'فرعان':'فرع واحد');
   const face = b.l ? '<span class="lgs"><img src="'+b.l+'" alt="شعار '+b.n+'" loading="lazy"></span>'
                    : '<span class="lgs"><span class="bid" style="width:100%;height:100%;border:none;background:none">'+String(i+1).padStart(2,'0')+'</span></span>';
@@ -799,13 +1045,13 @@ BRANDS.forEach((b,i)=>{
 });
 const eg_=document.getElementById('exp-grid');
 EXP.forEach((x,i)=>{
-  const el=document.createElement('article'); el.className='xp glass tilt rv pre';
+  const el=document.createElement('article'); el.className='xp glass spot tilt rv pre';
   el.innerHTML='<div class="ic"><svg viewBox="0 0 24 24">'+ICONS[x.i]+'</svg></div><div class="ix">'+String(i+1).padStart(2,'0')+
     '</div><h4>'+x.h+'</h4><p>'+x.p+'</p>';
   eg_.appendChild(el);
 });
 const mg_=document.getElementById('mods-grid');
-MODS.forEach(m=>{const el=document.createElement('div');el.className='mod glass rv pre';
+MODS.forEach(m=>{const el=document.createElement('div');el.className='mod glass spot rv pre';
   el.innerHTML='<b>'+m.b+'</b><small>'+m.s+'</small>';mg_.appendChild(el);});
 const tr=document.getElementById('track');
 const tile=w=>'<button class="lg" type="button" aria-label="'+w.n+'"><img src="'+w.l+'" alt="شعار '+w.n+'" loading="lazy"></button>';
@@ -821,6 +1067,30 @@ tr.addEventListener('click',e=>{
   }
 });
 
+/* ===== المنصات الحكومية: صفّان متحركان في اتجاهين متعاكسين ===== */
+(function(){
+  const A=document.getElementById('gov-a'), B=document.getElementById('gov-b');
+  if(!A||!B) return;
+  const half=Math.ceil(GOV.length/2);
+  const rowA=GOV.slice(0,half), rowB=GOV.slice(half);
+  const card=g=>'<button class="gv" type="button" aria-label="'+g.n+'" data-k="'+g.l+'">'+
+    '<span class="ph"><img src="'+g.l+'" alt="شعار '+g.n+'" loading="lazy"></span>'+
+    '<span class="nm">'+g.n+'</span></button>';
+  // التكرار مرتين ليبدو الشريط لا نهائياً
+  A.innerHTML=(rowA.map(card).join('')).repeat(2);
+  B.innerHTML=(rowB.map(card).join('')).repeat(2);
+  [A,B].forEach(tr=>{
+    tr.addEventListener('click',e=>{
+      const t=e.target.closest('.gv'); if(!t) return;
+      const was=t.classList.contains('lit');
+      document.querySelectorAll('.gv.lit').forEach(x=>x.classList.remove('lit'));
+      if(!was){ const k=t.dataset.k;
+        document.querySelectorAll('.gv[data-k="'+k+'"]').forEach(x=>x.classList.add('lit')); }
+      Sound.click();
+    });
+  });
+})();
+
 /* ============ العدّادات — عند الفتح وكل مرة تظهر فيها ============ */
 function runCounter(el){
   if(el.dataset.busy==='1') return;
@@ -830,7 +1100,8 @@ function runCounter(el){
     const p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,3), v=Math.round(to*e);
     el.textContent=v;
     if(v!==last&&Sound.on&&p<.95){last=v;Sound.tick();}
-    if(p<1) requestAnimationFrame(step); else {el.textContent=to; el.dataset.busy='0';}
+    if(p<1) requestAnimationFrame(step);
+    else {el.textContent=to; el.dataset.busy='0'; const s=el.closest('.stat'); if(s) s.classList.add('done');}
   })(t0);
 }
 const counters=Array.from(document.querySelectorAll('.cnt'));
@@ -909,6 +1180,23 @@ addEventListener('scroll',onScroll,{passive:true}); onScroll();
 const mb=document.getElementById('menu-btn'),nv=document.getElementById('nav');
 mb.addEventListener('click',()=>{const o=nv.classList.toggle('show');mb.setAttribute('aria-expanded',o?'true':'false');o?Sound.open():Sound.close();});
 links.forEach(a=>a.addEventListener('click',()=>{nv.classList.remove('show');mb.setAttribute('aria-expanded','false');}));
+
+/* ============ ضوء يتبع المؤشر داخل البطاقات ============ */
+if(matchMedia('(pointer:fine)').matches){
+  document.addEventListener('pointermove',e=>{
+    const c=e.target.closest && e.target.closest('.spot'); if(!c) return;
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',(((e.clientX-r.left)/r.width)*100).toFixed(1)+'%');
+    c.style.setProperty('--my',(((e.clientY-r.top)/r.height)*100).toFixed(1)+'%');
+  },{passive:true});
+}
+/* لمعة تمر على شريط الأرقام عند ظهوره */
+(function(){
+  const s=document.getElementById('stats'); if(!s) return;
+  if(RM||!('IntersectionObserver' in window)){ return; }
+  const o=new IntersectionObserver(es=>{ if(es[0].isIntersecting){ s.classList.add('lit'); o.disconnect(); } },{threshold:.35});
+  o.observe(s);
+})();
 
 /* ============ المؤشر / المغناطيس / الإمالة ============ */
 const ring=document.getElementById('ring');
